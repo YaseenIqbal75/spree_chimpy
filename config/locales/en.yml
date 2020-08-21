@@ -11,5 +11,5 @@ en:
         label: Email
         placeholder: Enter your email address
       subscriber:
-        success: Thanks! you've been successfully added
+        success: Thanks! you've been successfully subscribed
         failure: There was a problem processing your sign-up
