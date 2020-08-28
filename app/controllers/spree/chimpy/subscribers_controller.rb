@@ -11,12 +11,10 @@ class Spree::Chimpy::SubscribersController < ApplicationController
     else
       error_message = if !is_subscribed
         Spree.t(:email_available, scope: [:chimpy, :subscriber])
-      else
-        if !@subscriber.email?
+      elsif !@subscriber.email?
           Spree.t(:email_not_enter, scope: [:chimpy, :subscriber])
-        else
+      else
           Spree.t(:failure, scope: [:chimpy, :subscriber])
-        end
       end
       flash[:error] = error_message
     end
