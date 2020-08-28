@@ -10,12 +10,12 @@
     <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
     <%= form_for @subscriber, html: {class: "form-group form-inline signup send-mail"} do |f| %>
       <div class="form-group">
-        <div class="input-box form-group form-inline signup send-mail">
-          <%= f.email_field :email, placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), size: "35" %>
+        <div class="input-box">
+          <%= f.email_field :email, placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]),id: "txtemail",class: "form-control", size: "55" %>
           <%= f.hidden_field :subscribed, value: true %>
         </div>
         <div class="subcribe">
-          <button class="btn btn-primary btn-default font-title" type="submit" onclick="return subscribe_newsletter();" name="submit">
+          <button class="btn btn-primary btn-default font-title" type="submit" name="submit">
             Subscribe
           </button>
         </div>
