@@ -1,9 +1,27 @@
-<% @subscriber ||= Spree::Chimpy::Subscriber.new %>
-<%= form_for @subscriber do |f| %>
-  <div>
-    <h2><%= Spree.t(:subscribe_title, scope: :chimpy) %></h2>
-    <%= f.label :email, Spree.t(:label, scope: [:chimpy, :email]) %>
-    <%= f.email_field :email, placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]) %>
-    <%= f.submit %>
+ <div class="newsletter" style="width:100%; background-color: #fff; ">
+  <div class="title-block">
+    <div class="page-heading font-title">
+      Signup for Newsletter
+    </div>
+    <div class="promotext">We’ll never share your email address with a third-party. </div>
   </div>
-<% end %>
+
+  <div class="block_content ">
+    <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
+    <%= form_for @subscriber, html: {class: "form-group form-inline signup send-mail"} do |f| %>
+      <div class="form-group">
+        <div class="input-box">
+          <%= f.email_field :email, placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]),id: "txtemail",class: "form-control", size: "55" %>
+          <%= f.hidden_field :subscribed, value: true %>
+        </div>
+        <div class="subcribe">
+          <button class="btn btn-primary btn-default font-title" type="submit" name="submit">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!--/.modcontent-->
+
+</div>
